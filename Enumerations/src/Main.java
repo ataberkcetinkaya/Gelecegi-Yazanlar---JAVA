@@ -18,7 +18,7 @@ public class Main {
 		
 		System.out.println("------------------------");
 		
-		DayOfWeek sunday = DayOfWeek.MONDAY; //MONDAY
+		DayOfWeek monday = DayOfWeek.MONDAY; //MONDAY
 		
 		DayOfWeek indexOf = DayOfWeek.of(3); //WEDNESDAY
 		System.out.println(indexOf);
