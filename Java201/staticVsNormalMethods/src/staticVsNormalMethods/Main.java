@@ -31,6 +31,10 @@ public class Main {
 		
 		int[] findingTheEvens = Main.evenNumbers(new int[] {1,2,3,4,5,6,7,8});
 		System.out.println("Even numbers are: " + Arrays.toString(findingTheEvens));
+		
+		String input = "Hello World";
+		String result = removeLetters(input);
+		System.out.println(result);  // Hll Wrld
 	}
 	
 	public void normalMethod() {
@@ -118,6 +122,27 @@ public class Main {
 	    return theEvens;
 	}
 
+	public static String removeLetters(String s) {
+	    String[] vowels = {"a", "e", "i", "o", "u"};
+	    StringBuilder result = new StringBuilder(); //Create a StringBuilder to hold the result
+
+	    for(int i = 0; i < s.length(); i++) {
+	        String currentChar = String.valueOf(s.charAt(i)); //we hold the char's of the word at currentChar to compare
+	        boolean isVowel = false;
+
+	        for(String vowel : vowels) { //we compare the currentChar with vowels array, and if any matches we switch the isVowel to true and break the loop
+	            if(currentChar.equalsIgnoreCase(vowel)) {
+	                isVowel = true;
+	                break;
+	            }
+	        }
+	        if(!isVowel) { //if it's not vowel, we append it to the result variable from the StringBuilder.
+	            result.append(currentChar);
+	        }
+	    }
+
+	    return result.toString(); //and return the final String
+	}
 	
 	
 }
